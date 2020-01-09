@@ -1,5 +1,5 @@
 # ReactJS-Minimalist-Tutorial
-Simple ReactJS Tutorial, on plain text, straight to the point to start developing apps with ReactJS
+Simple ReactJS Tutorial, straight to the point to start developing apps with ReactJS
 
 This will be an Ubuntu-based tutorial
 
@@ -11,17 +11,15 @@ ReactJS is all about creating COMPONENTS for user interfaces (UI)
 
 #Installation
 
-For browser coding:
+For browser coding:///////////////////////////////////////
 1. Go to https://codepen.io/pen 
 2. Go to JS settings
 3. Select Babel in "JavaScript Preprocessor"
 4. Select React and ReactDOM in "Add External Scripts/Pens"
 
-Done! 
+//////////////////////////////////////////////////////////
 
-To install Local Development Environment:
-
-https://github.com/nodesource/distributions/blob/master/README.md#debinstall
+To install Local Development Environment://///////////////
 
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 
@@ -33,5 +31,4 @@ cd nameofmyreactapp
 
 npm start
 
-Done!
-
+//////////////////////////////////////////////////////////
