@@ -56,6 +56,8 @@ ReactDOM is another package for the React Team.
 
 Babel is a tool to compile the next-generation JS to code that works on the browser. It compiles .jsx files
 
+.jsx is like JavaScript version of HTML
+
 In it's basic form React Component it's just a function
 
 The render method allow us to render a JavaScript function as a component to the real DOM

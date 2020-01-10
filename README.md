@@ -1,13 +1,17 @@
 # ReactJS-Minimalist-Tutorial
-Simple ReactJS Tutorial, straight to the point to start developing apps with ReactJS
+Simple ReactJS Tutorial, Ubuntu based and straight to the point
 
-This will be an Ubuntu-based tutorial
+
 
 #What's ReactJS?
 
 ReactJS is a JavaScript library for create fast Web Apps
 
-ReactJS is all about creating COMPONENTS for user interfaces (UI)
+ReactJS is all about creating components for user interfaces (UI)
+
+Requires HTML, CSS, JavaScript and ES6 knowledge
+
+
 
 #Installation
 
@@ -17,7 +21,6 @@ For browser coding:///////////////////////////////////////
 3. Select Babel in "JavaScript Preprocessor"
 4. Select React and ReactDOM in "Add External Scripts/Pens"
 
-//////////////////////////////////////////////////////////
 
 To install Local Development Environment://///////////////
 
