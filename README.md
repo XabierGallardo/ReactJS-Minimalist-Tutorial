@@ -5,9 +5,9 @@ Simple ReactJS Tutorial, Ubuntu based and straight to the point
 
 #What's ReactJS?
 
-ReactJS is a JavaScript library for create fast Web Apps
+ReactJS is a JavaScript library to create fast Web Apps
 
-ReactJS is all about creating components for user interfaces (UI)
+ReactJS is all about making components for user interfaces (UI)
 
 Requires HTML, CSS, JavaScript and ES6 knowledge
 
@@ -35,3 +35,5 @@ cd nameofmyreactapp
 npm start
 
 //////////////////////////////////////////////////////////
+
+Done!
