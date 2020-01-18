@@ -184,25 +184,19 @@ myMethod = () => { //The arrow function as a propertie value, there are no probl
 	...
 }
 
-//EXAMPLE
+//EXAMPLE (we removed a lot of the previous code)
 class Human {
-	constructor() {
-		gender = "Male";
-	}
-
+	gender = "Male";
 	printGender = () => {
-		console.log(this.gender); //Still using this keyword when we're reaching out of the propertie value
+		console.log(this.gender); //Still using this keyword when we're reaching out of the propertie
 	}
 }
 
 class Person extends Human { //We are extending another class
-	constructor() {
-		super(); //super method executes the parent constructor
-		this.name = "Xan";
-		this.gender = "female";
-	}
+		name = "Xan";
+		gender = "female";
 
-	printMyName() {
+	printMyName = () => {
 		console.log(this.name);
 	}
 }
@@ -214,12 +208,71 @@ person.printGender(); //female
 
 
 
-//6. CLASSES///////////////////////////////////////////////////////////////
+//6. SPREAD & REST OPERATORS///////////////////////////////////////////////////////////////
+
+//Spread operator (used to split up array elements or objects properties)
+...
+
+const newArray = [...oldArray, 1, 2];
+const newObject = {...oldObject, newProp:5};
+
+//Rest (used to merge a list of function arguments into an array)
+...
+
+function sortArgs(...args) {
+	return args.sort();
+}
+
+//EXAMPLE Spread operator
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4];
+console.log(newNumbers); //[1, 2, 3, 4]
+
+const numbers = [1, 2, 3];
+const newNumbers = [numbers, 4];
+console.log(newNumbers); //[[1, 2, 3], 4]
+
+const person = {
+	name: "Xan"
+};
+
+const newPerson = {
+	...person,
+	age: 28
+}
+
+console.log(newPerson);
+/*[object Object] {
+	age: 28,
+	name: "Max"
+}*/
 
 
+//EXAMPLE Rest operator
+const filter = (...args) => { 
+	return args.filter(el => el === 1); //Return true or false if the element is equal to 1
+}
+
+console.log(filter(1, 2, 3)); //[1]
 
 
-//7. CLASSES///////////////////////////////////////////////////////////////
+//7. DESTRUCTURING///////////////////////////////////////////////////////////////
+//Destructuring allows us to easily extract array elements or objects properties and store them in variables
+
+//Array Destructuring
+[a,b] = ["Hello", "Max"];
+console.log(a); //Hello
+console.log(b); //Max
+
+//Object Destructuring
+{name} = {name:"Max", age: 28}
+console.log(name); //Max
+console.log(age); //undefined
+
+//EXAMPLE Array Destructuring
+const numbers = [1,2,3];
+[num1, ,num3] = numbers;
+console.log(num1,num3); //1 3
 
 
 
