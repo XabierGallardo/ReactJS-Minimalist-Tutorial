@@ -277,7 +277,37 @@ console.log(num1,num3); //1 3
 
 
 
-//8. CLASSES///////////////////////////////////////////////////////////////
+//8. REFERENCE AND PRIMITIVE TYPES///////////////////////////////////////////////////////////////
+
+//Primitive types (whenever you reassign a variable in another variable, it'll copy the value)
+const number = 1;
+const number2 = number;
+console.log(number2); // 1
+
+
+//Reference types (instead of copying, we'll copy the pointer)
+const person = {
+	name: 'Xan'
+};
+
+const secondPerson = person;
+person.name = "Xose";
+console.log(secondPerson); //[object Object] { name: "Xose"}
+
+//Objects and arrays are referenced types. Now let's going to create a real copy
+
+const person2 = {
+	name: "Xaquin"
+};
+
+const secondPerson2 = {
+	...person //if we want to copy, we have to copy the properties, not the entire object
+};
+
+person2.name = "Xurxo";
+console.log(secondPerson2); ////[object Object] { name: "Xaquin"}
+
+//If you reassign it, you're copying the pointer, not the value
 
 
 
