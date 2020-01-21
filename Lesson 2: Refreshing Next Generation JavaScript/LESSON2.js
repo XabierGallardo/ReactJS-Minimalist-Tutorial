@@ -4,7 +4,6 @@
 /*Modern variables in JavaScript (ES6) are let and const
 
 let: keyword for a variable value
-
 const: keyword for a constant value*/
 
 #var
@@ -72,10 +71,8 @@ console.log(multiply(2));
 
 
 //3. MODULES: EXPORT & IMPORT///////////////////////////////////////////////////////////////
-/*
-The idea is to import content to a JS file, from another JS file.
-There are default exports and named exports
-*/
+/*The idea is to import content to a JS file, from another JS file.
+There are default exports and named exports*/
 #person.js
 const person = {
 	name: 'Xan'
@@ -114,7 +111,6 @@ import * as bundled from './utility.js'
 
 
 //4. CLASSES///////////////////////////////////////////////////////////////
-
 /*Almost everything in JS are objects (except primitive values)
 We create JavaScript objects as blueprints*/
 
@@ -163,7 +159,6 @@ Classes are used by React to create its components*/
 
 
 //5. CLASSES, PROPERTIES AND METHODS///////////////////////////////////////////////////////////////
-
 /*Properties*/
 //ES6
 constructor() {
@@ -209,7 +204,6 @@ person.printGender(); //female
 
 
 //6. SPREAD & REST OPERATORS///////////////////////////////////////////////////////////////
-
 //Spread operator (used to split up array elements or objects properties)
 ...
 
@@ -256,6 +250,8 @@ const filter = (...args) => {
 console.log(filter(1, 2, 3)); //[1]
 
 
+
+
 //7. DESTRUCTURING///////////////////////////////////////////////////////////////
 //Destructuring allows us to easily extract array elements or objects properties and store them in variables
 
@@ -278,7 +274,6 @@ console.log(num1,num3); //1 3
 
 
 //8. REFERENCE AND PRIMITIVE TYPES///////////////////////////////////////////////////////////////
-
 //Primitive types (whenever you reassign a variable in another variable, it'll copy the value)
 const number = 1;
 const number2 = number;
@@ -320,6 +315,7 @@ const doubleNumbArray = numbers.map((num) => {
 console.log(numbers); //[1, 2, 3]
 console.log(doubleNumArray); //[2, 4, 6]
 //All this methods take a function as an input and this function is executed on each element in the array
+
 
 
 
