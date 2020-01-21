@@ -14,7 +14,7 @@ console.log(myName);
 myName = "Xaquin";
 console.log(myName);
 
-//Xan 
+//Xan
 //Xaquin
 
 
@@ -38,7 +38,7 @@ console.log(myName);
 myName = "Xaquin";
 console.log(myName);
 
-//Xan 
+//Xan
 //ERROR (TypeError: Assignment to constant variable)
 
 
@@ -63,7 +63,7 @@ Arrow Functions:
 - No need of () if there's only one argument
 - No need of {} if there's a simple return statement
 */
-const multiply = (number) => number * 2; //or const multiply = number => number * 2; 
+const multiply = (number) => number * 2; //or const multiply = number => number * 2;
 console.log(multiply(2));
 
 //4
@@ -82,7 +82,7 @@ const person = {
 }
 
 //default keyword means that if we just import something from that file, it'll always be our default person
-export default person 
+export default person
 
 
 #utility.js
@@ -170,7 +170,7 @@ constructor() {
 	this.myPropertie = "value"
 }
 
-//ES7 
+//ES7
 myPropertie = "value" //We skip the constructor call
 
 /*Methods*/
@@ -179,7 +179,7 @@ myMethod() {
 	...
 }
 
-//ES7 
+//ES7
 myMethod = () => { //The arrow function as a propertie value, there are no problems with "this" keyword
 	...
 }
@@ -249,7 +249,7 @@ console.log(newPerson);
 
 
 //EXAMPLE Rest operator
-const filter = (...args) => { 
+const filter = (...args) => {
 	return args.filter(el => el === 1); //Return true or false if the element is equal to 1
 }
 
@@ -312,19 +312,30 @@ console.log(secondPerson2); ////[object Object] { name: "Xaquin"}
 
 
 
-//9. REFRESHING ARRAY FUNCTIONS///////////////////////////////////////////////////////////////
+//9. REFRESHING ARRAY FUNCTIONS////////////////////////////////////////////
+cont numbers = [1, 2, 3];
+const doubleNumbArray = numbers.map((num) => {
+	return num*2;
+});
+console.log(numbers); //[1, 2, 3]
+console.log(doubleNumArray); //[2, 4, 6]
+//All this methods take a function as an input and this function is executed on each element in the array
 
 
 
+//10.SUMMARY///////////////////////////////////////////////////////////////
 
-//10. CLASSES///////////////////////////////////////////////////////////////
+// let & const basically replace var
 
+// Arrow Functions are different way of creating functions. They add shorter syntax and advances on the scope of this keyword
 
+// Exports and Imports. We can split code across multiple js files. To access functionality in another file, export to make it available and import (to get access) statements. We can import default or named exports
 
+// Classes are a feature that replace constructor functions and prototypes. You can define blueprints for JS objects with them
 
-//11. CLASSES///////////////////////////////////////////////////////////////
+// The spread & Rest Operator use the same syntax ...
+// The spread Operator allows to pull elements out of an array or pull the properties out of an object. It's extremely useful for cloning arrays and objects.
 
+//Destructuring allows to easily access the values of arrays or objects and assign them to variables
 
-
-
-//12. CLASSES///////////////////////////////////////////////////////////////
+//JS Array Functions. JS functions like map(), find(), findIndex(), filter(), reduce(), concat(), slice() and splice()
