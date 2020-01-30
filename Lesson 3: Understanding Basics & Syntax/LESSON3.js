@@ -41,5 +41,50 @@ Don't quit the process while developing, it will reflect the latest changes*/
 
 /*3.	Understanding the folder structure
 
+(Make sure that npm start is running whenever you're working on our code).
+On the root level, we have some configuration files. 
 
-*/
+package.json:	The general dependencies our project have are found in here.
+
+node_modules: 	This folder holds all dependencies and subdependencies of our project.
+
+public:		This is the root folder gets served by the web server, holds the files we can edit. 
+
+public/index.html:	(We'll never add more html pages in this project). This is the single page where in the end our scrip files will get injected by that build workflow.
+<div id="root"> will be where we actually mount our react app later.
+We can also add imports, other libraries, css libraries in this file.
+
+src: 		Holds the script files we'll work with. This is actually our React Application. 
+
+src/index.js:	Get access to the div root element. We can see the render method that renders our React app.
+
+src/App.js:	First and only React component we have in this starting project. On this file, let's remove all content on the div and add the next lines: <h1>Hi, I'm a React App</h1>
+
+src/App.css:	Defines the stylings we use in the app.js file. We can remove everything in there as well, except .App{...}
+
+src/index.css:	Also applies styles, which also applies styles globally. Used mostly as a general set up for the application.
+
+src/registerServiceWorker.js:	Important for registering a service worker.
+
+src/App.test.js:	Allows us to reate unit tests for the different units (for example, components in our application).
+
+
+This is the general setup, for the majority of the tutorial, we'll work in App.js or other new components. Let's analize App.js:*/
+
+
+
+
+/*4.	Understanding Components Basics*/
+
+import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<h1>Hi, I'm a React App</h1>
+			</div>
+		);
+	}
+}
