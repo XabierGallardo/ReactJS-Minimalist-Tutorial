@@ -76,15 +76,64 @@ This is the general setup, for the majority of the tutorial, we'll work in App.j
 
 /*4.	Understanding Components Basics*/
 
+//App.js
 import React, { Component } from 'react';
 import './App.css';
 
+//The App component gets used in the index.js file where you render it into the place of this root
+//One way of defining react components, creating a JS class and using the extends keyword to inherit from this component object or class, imported on the top from the react library
 class App extends Component {
-	render() {
+	render() { //The render method of this class is a basic component, which is render some HTML to the DOM
 		return (
-			<div className="App">
+			<div className="App"> //Not HTML code but JSX, code or syntax we can use to write html in quotation marks
 				<h1>Hi, I'm a React App</h1>
 			</div>
 		);
 	}
 }
+export default App; //We export the class and import again on the index.js
+
+//index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App'; //We take the class defined on the file App.js
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root')); //The App component is defined in the App.js
+registerServiceWorker();
+
+
+
+
+/*5.	Understanding JSX*/
+
+//We'll modify App.js to understand JSX
+
+//App.js
+import React, { Component } from 'react';
+import'./App.css';
+
+class App extends Component {
+	render() {
+		//Call a method of the React object, first argument is the element we want to render to the DOM <div>
+		//2nd argument is the configuration for this
+		//3rd argument is any amount of children (what's nested inside the div)
+		//4rd argument is what's nested on it
+		return React.createElement("div", null, "h1", "Hi, I\'m a React App!!!");
+
+		//We'll not rendered a h1 element, we rendered text, which is the default behaviour, h1 is interpreted as text
+		//To render another element inside the div, we'll replace the code with another call to react create element
+		return React.createElement("div", null, React.createElement("h1", null, "Does this work now?"));
+
+		//Now to apply CSS, we'll replace the code and we'll pass a javascript object instead of null
+		return React.createElement('div', {className: 'App'}, React.createElement('h1',null, 'Does this work now?'));
+	}
+}
+
+//The code we wrote is the exact equivalent as the JSX code we had. That code is compiled by one of the many build tools we got on this project. Therefore, that code is used once it's already compiled. It's important to understand that JSX is much simpler, fast and over all, whilst look like html, it isn't.
+
+
+
+
+/*6.	JSX Restrictions*/
