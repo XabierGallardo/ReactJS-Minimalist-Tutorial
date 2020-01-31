@@ -137,3 +137,93 @@ class App extends Component {
 
 
 /*6.	JSX Restrictions*/
+
+/*There are certain limitations on JSX, we cannot use the CSS's class name because it's a reserved word in JS and it's used, therefore we must use "className". 
+It's a good practice to wrap everything in one root element per component. Typically everything is nested onto one root element that we'll return*/
+
+//App.js
+import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Hi, I'm a React App</h1>
+        <p>This is really working!</p>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+
+
+/*7.	Creating a functional Component*/
+
+//We'll add a new Folder on the source (src) folder on our project, called Person (it's a convenction to give your components a capital starting characters.
+//Inside the folder, we'll create a Person.js file. Most of the time we'll use a different form of creating components. A simple js function. Because in it's simplest form, a component is just a function which returns some jsx (html).
+
+//Person.js
+//We need to import React from the react package, because the JSX syntax is transformed to react create element
+import React from 'react'; //We don't need the Component, since we're not using a class which extends component, instead we're creating a function
+
+const person = () => {
+	return <p>I'm a person!</p> 
+};
+
+export default person; //We need to export constant which holds the function
+//Now we can use this component in other files of our project
+
+//App.js
+import React, { Component } from 'react';
+import './App.css';
+import Person from './Person/Person'; //It should have an uppercase character, because in jsx, all elements starting with lowcase characters are reserved for the native html elements
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Hi, I'm a React App</h1>
+        <p>This is really working!</p>
+        <Person />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+
+
+
+/*8.	Components & JSX Cheat Sheet*/
+
+/*Components are the core building block of React apps.
+Actually, React is just a library for creating components in its core.
+
+A typical React app therefore could be depicted as a component tree -having one root component ("App") and then a pontentially infinite amount of nested child components.
+
+Each component need to return/render some JSX code - it defines which HTML code React should render to the real DOM in the end.
+
+JSX is not HTML but looks a lot like it. Differences can be seen when looking closely though (className vs class). JSX is just syntactic sugar for JS, allowing you to write HTMLish code instead of nested React.createElement(...) calls.
+
+When creating components, you have the choice between two different ways:*/
+
+	//1. Functional components 
+		const cmp = () => {
+			return <div> some JSX</div>
+		}
+
+	//2. Class-based components
+		class Cmp extends Component {
+			render() {
+				return <div>some JSX</div>
+			}
+		}
+
+
+
