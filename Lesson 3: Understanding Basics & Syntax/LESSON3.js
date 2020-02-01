@@ -22,6 +22,7 @@ Also Babel + Presets as part of the webpack configuration to be part of the bund
 
 
 
+
 /*2.	Using Create React App
 
 Instructions on
@@ -35,6 +36,7 @@ cd my-app/
 npm start
 
 Don't quit the process while developing, it will reflect the latest changes*/
+
 
 
 
@@ -74,6 +76,7 @@ This is the general setup, for the majority of the tutorial, we'll work in App.j
 
 
 
+
 /*4.	Understanding Components Basics*/
 
 //App.js
@@ -102,6 +105,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root')); //The App component is defined in the App.js
 registerServiceWorker();
+
 
 
 
@@ -136,6 +140,7 @@ class App extends Component {
 
 
 
+
 /*6.	JSX Restrictions*/
 
 /*There are certain limitations on JSX, we cannot use the CSS's class name because it's a reserved word in JS and it's used, therefore we must use "className". 
@@ -157,6 +162,7 @@ class App extends Component {
 }
 
 export default App;
+
 
 
 
@@ -227,3 +233,120 @@ When creating components, you have the choice between two different ways:*/
 
 
 
+
+
+/*9.	Re-Using Components and Outputting Dynamic Content*/
+
+//For re-using, we can just copy our custom component <Person /> as many times as we want
+    return (
+      <div className="App">
+        <h1>Hi, I'm a React App</h1>
+        <p>This is really working!</p>
+        <Person />
+	<Person />
+	<Person />
+      </div>
+    );
+
+//To create some dynamic content, adding a random number 
+
+//Person.js
+const person = () => { //If we want to run as JS code and not interpret as text, we'll use { }
+	return <p>I'm a person and I'm {Math.floor(Math.random() * 30)} years old</p>
+};
+
+//We are using dynamic content as part of our JSX code. But one single line expressions, like simple calculations or function calls
+
+
+
+
+
+/*10.	Working with Props*/
+
+//Let's make our content configurable, flexible and dynamic
+//App.js
+
+return (
+	<div className="App">
+		<h1>Hi, I'm a React App</h1>
+	        <p>This is really working!</p>
+		<Person name="Xabier" age="28"/>
+        	<Person name="Xan" age="26">My Hobbies: Hockey</Person>
+        	<Person name="Xaquin" age="27"/>
+	</div>
+); //Now we have to change something in our Person component to handle that input (By default there will be no changes)
+
+//Person.js
+const person = (props) => { //We'll receive one argument in our function which is an object with all the properties of this component
+	return <p>I'm {props.name} and I'm {props.age} years old!</p>
+};
+
+//When using class-based components it's "this.props"
+//Now we have a reusable component with a defined template, and we're also using dynamic content
+
+
+
+
+
+/*11.	Understanding the "children" Prop*/
+
+//We learned how to use props, how to receive them as an argument and output them dynamically
+//Now we also want to output whatever we pass between the opening and closing tag of our custom component, on App.js we have
+                <Person name="Xan" age="26">My Hobbies: Hockey</Person>
+
+//Therefore, we go to Person.js
+const person = (props) => {
+	return 	( //We add a parentheses so we can write over multiple lines
+		<div>
+			<p>I'm {props.name} and I'm {props.age} years old!</p>
+			<p>{props.children}</p>
+//Children refers to any elements (includes plain text) between the opening and closing tags of our component
+//We can nest complex html code in-between, an unordered list with multiple list items, other react component, anything
+		</div>
+	);
+}
+//If we inspect the code on the browser console, we can see an empty paragraph, because props.children is undefined as null. We can put content into our component from outside, not only by passing props
+
+
+
+
+
+/*12.	Understanding & Using State*/
+
+//Sometimes we don't want to get some information from outside, but from inside a component and change it from inside too
+//If we later want to change our values on App.js, we must store them inside a variable
+
+class App extends Component{
+//There's one special property you can define in any component which extends Component
+//Whereas props are set and passed from outside like name and age into the person component, state is managed from inside a component
+
+state = { //We initialize it by assigning a value and this value is a JS object
+	persons: [ //We want to create an array of persons, which is an array of JS objects
+		{name: 'Xabier', age: 28}, 
+		{name: 'Xan', age: 27},
+		{name: 'Xaquin', age: 26}
+	]
+}
+
+//Now with our state defined
+render() {
+    return (
+      <div className="App">
+        <h1>Hi, I'm a React App</h1>
+        <p>This is really working!</p>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> //this keyword refers to the class (ES6 syntax)
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>My Hobbies: Hockey</Person>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+      </div>
+    );
+  }
+}
+
+//Now we have the same output, this time using the state property. State can be changed if it changes, it'll lead react to re-render our DOM (or update the DOM). So if we change the name of Xan, it will be re-rendered
+//On the next lesson, we'll listen to events to change the values and see how state can handle the changes
+
+
+
+
+
+/*13.	Props & State*/
