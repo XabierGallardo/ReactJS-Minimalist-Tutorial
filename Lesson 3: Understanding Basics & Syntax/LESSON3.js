@@ -350,3 +350,30 @@ render() {
 
 
 /*13.	Props & State*/
+/*props and State are CORE concepts of React.
+Actually, only changes in props and/or state trigger React to re-render your components and potentially update the DOM in the browser
+
+props allows you to pass data from a partent (wrapping) component to a child (embedded) component:*/
+const posts = () => {
+	return(
+	<div>
+		<Post title="My first Post" />
+	</div>
+	);
+}
+
+/*title is the custom property (prop) set up on the custom Post component.
+ * We basically replicate the default HTML attribute behavior we already know*/
+const post = (props) => {
+	return (
+	<div>
+		<h1>{props.title}</h1>
+	</div>
+	);
+}
+
+/*The Post component receives the props argument. React will pass one argument to your component function => An object, which contains all properties you set up on <Post.../>
+ {props.title} then dynamically outputs the title property of the props object -which is available since we set the title property inside AllPosts component)*/
+
+/*State
+ * Whilst props allow you to pas data down the component tree (and hence trigger an UI update), state is used to change the component, state from within. Changes to state also trigger an UI update*/
