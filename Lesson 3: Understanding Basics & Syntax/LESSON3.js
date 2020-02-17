@@ -376,4 +376,28 @@ const post = (props) => {
  {props.title} then dynamically outputs the title property of the props object -which is available since we set the title property inside AllPosts component)*/
 
 /*State
- * Whilst props allow you to pas data down the component tree (and hence trigger an UI update), state is used to change the component, state from within. Changes to state also trigger an UI update*/
+Whilst props allow you to pas data down the component tree (and hence trigger an UI update), state is used to change the component, state from within. Changes to state also trigger an UI update*/
+
+class NewPost extends Components {
+	state = {
+		counter: 1
+	};
+
+	render() {
+		return(
+			<div>{this.state.counter}</div>
+		);
+	}
+}
+
+/*NewPost component contains state. Only class-based components can define and use state. You can of course pass the state down to functional components, but these can't directly edit it.
+
+state simply is a property of the component class, you have to call it state though. You can access it via this.state in your class JSX code (which you return in the required render() method).
+
+Whenever state changes the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component, you don't receive new data (props) from outside*/
+
+
+
+
+
+/*14.	*/
