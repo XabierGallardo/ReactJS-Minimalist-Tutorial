@@ -1,4 +1,4 @@
-#First React Code
+## First React Code
 
 1. Go to https://codepen.io/pen 
 2. Go to JS settings
@@ -7,14 +7,14 @@
 
 
 
-#CODE
+## HTML
 
-HTML_________________
-
+```sh
 <div id="app"></div>
+```
 
-CSS_________________
-
+## CSS
+```sh
 .person {
 	border: 2px solid;
 	display: inline-block;
@@ -22,10 +22,12 @@ CSS_________________
 	width: 200px;
 	padding: 20px;	
 }
+```
 
-JS_________________
-
+## JS
+```sh
 //The argument props contains all the attributes we add to our components (Xan, Xose)
+
 function Person(props) {
   return(
     <div className="person">
@@ -37,6 +39,7 @@ function Person(props) {
 }
 
 //We store the information on this var
+
 var app = (
   <div>
       <Person name="Xan" age="28"/>
@@ -45,11 +48,12 @@ var app = (
 );
 
 //The ReactDOM object uses render method, to render this function(the person component, onto the specific place)
+
 ReactDOM.render(app, document.querySelector('#app'));
+```
 
 
-
-#Explanation
+## Explanation
 ReactDOM is another package for the React Team.
 - React is the logic for creating the components.
 - ReactDOM is about rendering this components to the real DOM
@@ -63,5 +67,3 @@ In it's basic form React Component it's just a function
 The render method allow us to render a JavaScript function as a component to the real DOM
 
 The idea is to write the HTML code once, and being able to re-use over and over
-
-
