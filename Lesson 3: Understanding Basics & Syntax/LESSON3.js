@@ -349,7 +349,54 @@ render() {
 
 
 
-/*13.	Props & State*/
+/*13. 	Another example of State*/
+
+/*We're on App.js which is a component, a file that holds all the logic in 1 file
+State is some data store in a variable that makes oiur app to render itself*/
+
+import React, {useState} from 'react'; 
+import Tweet from '../../NOTEPAD/reactjs-notepad/src/Tweet';
+
+function App() { //We create the component
+
+	
+	const [isRed, setRed] = useState(false);//isRed is the name and setRed is the name that will change the value
+	
+	const[count, setCount] = useState(0);//count is the name and setCount the name that will change the value
+
+	//Eventually, we'll get some data from an API and we'll save that in a state
+	const [users, setUsers] = useState([
+		{name: 'Ed', age: 25, message:'Yo man!'},
+		{name: 'Xabier', age: 28, message:'Boas!'},
+		{name: 'Peli', age: 27, message:'De locos'}
+	]);
+
+	const increment = ()=> {
+		setCount(count + 1);
+		
+		//Toggle, now we'll assign the opposite of its value
+		//This way we add and remove classes in React
+		setRed(!isRed); //On our css file, we have .red {color: red;}
+	};
+	
+	return (
+		<div className="app">
+			<button onClick={increment}>Increment</button>
+			<h1>{count}</h1>
+			<h1 className={isRed ? 'red' : ''}>Change my color</h1>
+			<Tweet name={users.name} message={users.message}></Tweet>
+		</div>
+	);
+}
+
+export default App; //We export the component and it will be rendered in index.js
+
+
+
+
+
+
+/*14.	Props & State*/
 /*props and State are CORE concepts of React.
 Actually, only changes in props and/or state trigger React to re-render your components and potentially update the DOM in the browser
 
@@ -400,4 +447,4 @@ Whenever state changes the component will re-render and reflect the new state. T
 
 
 
-/*14.	*/
+/*15.	*/
