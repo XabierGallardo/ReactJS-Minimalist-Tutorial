@@ -67,3 +67,16 @@ In it's basic form React Component it's just a function
 The render method allow us to render a JavaScript function as a component to the real DOM
 
 The idea is to write the HTML code once, and being able to re-use over and over
+
+
+## Single Page Apps vs Multi Page Apps
+
+When we-re bulding applications with React or any other library like Angular or Vue, we can esentially create 2 web applications:
+**Single Page Apps**
+- Only one HTML page, Content is (re)rendered on Client.
+- Typically only one ReactDOM.render() call.
+
+**Multi Page Applications**
+- Multiple HTML pages, Content is rendered on Server.
+- A lot of the pages will have HTML and CSS code and some widgets like a image gallery managed by React.
+- Individual widgets don't know about each other existences.

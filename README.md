@@ -1,9 +1,9 @@
 # ReactJS-Minimalist-Tutorial
-Simple ReactJS Tutorial, Ubuntu based and straight to the point.
+Simple ReactJS Tutorial, Linux based and straight to the point.
 
 ## What's ReactJS?
 
-ReactJS is a JavaScript library to create fast Web Apps.<br>
+ReactJS is a JavaScript library to create highly reactive and fast Web Apps.<br>
 ReactJS is all about making components for user interfaces (UI).<br>
 Requires HTML, CSS, JavaScript and ES6 knowledge.
 
